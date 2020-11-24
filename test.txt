@@ -1,0 +1,20 @@
+#include  <stdio.h>
+unsigned long fun(unsigned long  n)
+{ unsigned long  x=0;    int  t;
+  while(n)
+  { t=n%10;       //对n模10，取出最低位数字 
+/**********found**********/
+    if(t%2==0)    //如果最低位为偶数 
+/**********found**********/
+       x=10*x+t;  //放入当前x的数字的后面,即把原来x升一位，t放到后面
+/**********found**********/
+    n=n/10;       //对n减一数量级 
+  }
+  return  x;
+}
+main()
+{ unsigned long  n=-1;
+  while(n>99999999||n<0)
+  { printf("Please input(0<n<100000000): ");  scanf("%ld",&n);  }
+  printf("\nThe result is: %ld\n",fun(n));
+}
