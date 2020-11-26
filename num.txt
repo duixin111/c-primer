@@ -1,0 +1,34 @@
+#include <stdio.h>
+float  fun ( float  *a ,  int  n )
+{
+   int i;
+   float av=0.0; 
+   for(i=0; i<n;i++)         //求分数的总和
+       av=av+a[i]; 
+   return(av/n);             //返回平均值
+}
+
+main()
+{ float score[30]={90.5, 72, 80, 61.5, 55}, aver;
+  void NONO (  );
+  aver = fun( score, 5 );
+  printf( "\nAverage score  is: %5.2f\n", aver);
+  NONO ( );
+}
+
+void NONO ( )
+{/* 本函数用于打开文件，输入数据，调用函数，输出数据，关闭文件。 */
+  FILE *fp, *wf ;
+  int i, j ;
+  float aver, score[5] ;
+
+  fp = fopen("in.dat","r") ;
+  wf = fopen("out.dat","w") ;
+  for(i = 0 ; i < 10 ; i++) {
+    for(j = 0 ; j < 5 ; j++) fscanf(fp,"%f,",&score[j]) ;
+    aver = fun(score, 5) ;
+    fprintf(wf, "%5.2f\n", aver) ;
+  }
+  fclose(fp) ;
+  fclose(wf) ;
+}
