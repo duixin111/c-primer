@@ -1,56 +1,112 @@
+//////#include<stdio.h>
+////// void jolly();
+////// void deny();
+//////int main() {
+//////	for (int i = 0; i < 3; i++)
+//////		jolly();
+//////	deny();
+//////	return 0;
+//////}
+//////void jolly() {
+//////	printf("123\n");
+//////}
+//////void deny() {
+//////	printf("111\n");
+//////}
+////#include<stdio.h>
+////int main() {
+////	int a = 10;
+////	printf("a=%-d\n", a);
+////	printf("a*a=%d\n", a * a);
+////	printf("2a=%2d\n",2*a);
+////
+////	return 0;
+////}
+////#include<stdio.h>
+////int main() {
+////	int a;
+////
+////	scanf_s("%d",&a);
+////
+////	printf("%c",a);
+////
+////
+////	return 0;
+////}
+////#include<stdio.h>
+////int main() {
+////	printf("\a");
+////
+////	printf("hello word");
+////
+////	return 0;
+////}
+//#include<stdio.h>
+////int main() {
+////	float a;
+////	scanf_s("%f",&a);
+////	printf("%f\n",a );
+////
+////	printf("%e\n",a);
+////
+////	printf("%a\n",a);
+////
+////	return 0;
+////}
+//#define m 3.156e7
+//int main() {
+//
+//	/*long int ages;
+//	scanf_s("%ld",&ages);
+//
+//	printf("%e",ages*m);
+//	printf("he sold the painting for $%2.2f.\n", 2.345e2);*/
+//	printf("%c%c%c\n", 'h', 105, '\41');
+//	printf("Is %2.2e the same as %2.2f?\n", 1201.0, 1201.0);
+//
+//
+//	return 0;
+//
+//}
+//#include<stdio.h>
+//int main() {
+//
+//	char a[20];
+//
+//	scanf_s("%s",a[20]);
+//
+//	printf("%s",a);
+//
+//	return 0;
+//}
+#define _CRT_SECURE_NO_WARNINGS
 #include <stdio.h>
-#define ROWS 3
-#define COLS 4
-void sum_rows(int ar[][COLS], int rows);
-void sum_cols(int[][COLS], int); // 省略形参名，没问题
-int sum2d(int(*ar)[COLS], int rows); // 另一种语法
+#include <string.h>
+#define _CRT_SECURE_NO_WARNINGS
+
+
 int main(void)
 {
-	int junk[ROWS][COLS] = {
-	{ 2, 4, 6, 8 },
-	{ 3, 5, 7, 9 },
-	{ 12, 10, 8, 6 }
-	};
-	sum_rows(junk, ROWS);
-	sum_cols(junk, ROWS);
-	printf("Sum of all elements = %d\n", sum2d(junk, ROWS));
-	return 0;
-}
-void sum_rows(int ar[][COLS], int rows)
+    int len = 0;
+    char name[20];
 
+    printf("Please enter your name:");
+    scanf("%s",name);
+    getchar();
+    len = strlen(name);
+    printf("Print your name:\n");
+    printf("a.\"%s\"\n", name);
+    printf("b.\"%s\"\n", name);
+    printf("c.\"%s\"\n", name);
+    printf("d.%*s\n", len + 3, name);
+
+    return 0;
+}/*
+int main(void)
 {
-	int r;
-	int c;
-	int tot;
-	for (r = 0; r < rows; r++)
-	{
-		tot = 0;
-		for (c = 0; c < COLS; c++)
-			tot += ar[r][c];
-		printf("row %d: sum = %d\n", r, tot);
-	}
-}
-void sum_cols(int ar[][COLS], int rows)
-{
-	int r;
-	int c;
-	int tot;
-	for (c = 0; c < COLS; c++)
-	{
-		
-			tot = 0;
-		for (r = 0; r < rows; r++)
-			tot += ar[r][c];
-		printf("col %d: sum = %d\n", c, tot);
-	}
-}
-int sum2d(int ar[][COLS], int rows)
-{
-	int r;
-	int c;
-	int tot = 0;
-	for (r = 0; r < rows; r++)
-		for (c = 0; c < COLS; c++)
-			tot += ar[r][c];
-	return tot;
-}
+int a;
+scanf("%d",&a);
+printf("%d",a);
+return 0;
+
+}*/
