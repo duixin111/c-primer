@@ -4,12 +4,18 @@
 
 int main() {
 	float wage, tax, ave, b;
+	wage = tax = ave = b = 0;
 	int a=0;
 	
 	printf("1.单身\n2.户主\n3.已婚，共有\n4.已婚，离异\n");
 	printf("请输入类别：");
 	while (scanf("%d", &a) == 1 && a != '#') {
-		printf("\n请输入工资：");
+		if (a > 4 || a < 1)
+		{
+			printf("请正确输入！");
+			break;
+		}
+		printf("请输入工资：");
 		scanf("%f", &wage);
 		
 		switch (a)
@@ -43,6 +49,8 @@ int main() {
 			printf("税金是：%f\t收入是：%f\n", tax, ave);
 
 		}
+		printf("1.单身\n2.户主\n3.已婚，共有\n4.已婚，离异\n");
+		printf("请输入类别：");
 
 	}
 	return 0;
