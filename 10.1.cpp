@@ -1,6 +1,6 @@
 #include<stdio.h>
-#define MONTHS 12 // 一年的月份数
-#define YEARS 5 // 年数
+#define MONTHS 12 // 脪禄脛锚碌脛脭脗路脻脢媒
+#define YEARS 5 // 脛锚脢媒
 
 
 int main(void)
@@ -39,4 +39,5 @@ int main(void)
 
 
 	return 0;  
+	
 }
