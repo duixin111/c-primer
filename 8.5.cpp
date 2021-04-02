@@ -2,28 +2,38 @@
 #include<stdio.h>
 
 int main() {
-	int a, c;
-	char b;
-	int z = 56;
-	printf("please input a figure:");
-	scanf("%d", &a);
-	while (a != z) {
-		printf("�´��˻��ǲ�С�ˣ���d;С��x����");
-		scanf("%c", &b);
-		if (b == 'd') {
-			a = (a - 50) / 2 + a;
+	int up = 200;
+	int low = 0;
+	int n = 100;
+	char ch = 'n';
+	printf("I guess it is 100, right(d/x):");
+	scanf("%d", &ch);
 
-		}
-		else if (b == 'x')
+	while (ch != 'y') {
+
+	//	printf("猜大了还是猜小了（大：d;小：x）：");
+
+		scanf("%c", &ch);
+		if (ch == 'd') 
 		{
-			a = (a - 50) * 2 + a;
+			up = n;
+			n = (up + low) / 2;
+		}
+		else if (ch == 'x')
+		{
+			low = n;
+			n = (up + low) / 2;
 		}
 
-		printf("%d\n", a);
+		printf("you fancy is %d ?\n", n);
+		printf("猜大了还是猜小了（大：d;小：x）：");
+		scanf_s("%c", &ch);
+	//	getchar();
 
 
 	}
-	printf("��¶��ˣ�");
+
+	printf("你猜对了！");
 
 	return 0;
 }
