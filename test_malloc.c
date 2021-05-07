@@ -1,9 +1,27 @@
+#define  _CRT_SECURE_NO_WARNINGS
 #include<stdio.h>
 #include<malloc.h>
 #include<memory.h>
 #include<assert.h>
+#include<string.h>
 
+typedef struct Test
+{
+	int len;
+	char str[];
+}Test;
+int main()
+{
+	char* string = "majiahao";
+	int len = strlen(string);
+	Test* pt = (Test*)malloc(sizeof(Test) + len + 1);
+	pt->len = len;
+	strcpy(pt->str, string);
+	printf("%d %s\n", pt->len, pt->str);
 
+	free(pt);
+	//printf("%d", sizeof(Test));
+}
 
 
 /*
