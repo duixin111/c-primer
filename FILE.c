@@ -7,16 +7,79 @@
 
 
 
+#if 0
+void main()
+{
+	int ar[10];
+
+	FILE* fp = fopen("Test3.txt", "rb");
+	if (fp == NULL)
+	{
+		printf("Open Test1.txt Error.\n");
+		return;
+	}
+
+	fread(ar, sizeof(int), 10, fp);
+	for (int i = 0; i < 10; i++)
+		printf("%d ", ar[i]);
+
+	fclose(fp);
+}
+
+
+void main()
+{
+	int ar[] = {12,23,34,45,56,67,78,89,90,100};
+	int n = sizeof(ar) / sizeof(ar[0]);
+
+	FILE *fp = fopen("Test3.txt", "wb");
+	if(fp == NULL)
+	{
+		printf("Open Test1.txt Error.\n");
+		return;
+	}
+
+	fwrite(ar, sizeof(int), n, fp);
+
+	fclose(fp);
+}
+
 int main()
 {
-
+	int ar[10];
+	FILE* fp = fopen("test3.txt", "rb");
+	if (fp == NULL)
+	{
+		printf("open test3.txt error.\n");
+		return -1;
+	}
+	fread(ar, sizeof(int), 10, fp);
+	fclose(fp);
+	return 0;
 }
-#if 0
+
+
+int main()
+{
+	int ar[] = { 1,2,3,4,5,6,7,8,9 };
+	int n = sizeof(ar) / sizeof(ar[0]);
+	FILE* fp = fopen("test3.txt", "wb");
+	if (NULL == fp)
+	{
+		printf("open test3.txt error.\n");
+		return -1;
+	}
+	fwrite(ar, sizeof(int), n, fp);
+	fclose(fp);
+
+	return 0;
+}
+
 int main()
 {
 	FILE* fpIn = fopen("test.c", "r");
 	assert(fpIn != NULL);
-	FILE* fpOut = fopen("myTest.c", "w");
+	FILE* fpOut = fopen("myTest.c", "w");lb
 	assert(fpOut != NULL);
 	char ch[256] = { 0 };
 	char* res = fgets(ch, 256, fpIn);
