@@ -32,7 +32,7 @@ int main(void)
 			//subtot = subtot + *(*(rain + years) + months);
 		}
 		printf("%4.1f ", subtot / YEARS);
-	}
+	 }
 
 
 
